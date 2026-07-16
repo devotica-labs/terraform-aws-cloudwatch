@@ -8,6 +8,19 @@ Releases are cut automatically by `release-please` on merge to `main`,
 driven by Conventional Commit prefixes (`feat:` → minor, `fix:`/`docs:`/`chore:` → patch,
 `feat!:`/`BREAKING CHANGE:` → major).
 
+## 0.1.0 (2026-07-16)
+
+
+### Features
+
+* **ci:** add architecture-diagram workflow + renderer ([0fada64](https://github.com/devotica-labs/terraform-aws-cloudwatch/commit/0fada64ad1def9807e5aeabda208eadb97beecdc))
+* initial release of terraform-aws-cloudwatch ([f43b597](https://github.com/devotica-labs/terraform-aws-cloudwatch/commit/f43b59798555bbf11930b00aa6909da5a6734594))
+
+
+### Bug Fixes
+
+* **ci:** drop dead pip/scripts dependabot entry; tflint clean ([e940e77](https://github.com/devotica-labs/terraform-aws-cloudwatch/commit/e940e775b9a5937703c935308473c99068a10fa4))
+
 ## [Unreleased]
 
 ### Added
