@@ -1,0 +1,49 @@
+#
+# Canonical configuration for README.md (cloudposse-style doc standard,
+# native to Devotica). Run `make readme` to regenerate the terraform-docs
+# section of README.md.
+#
+
+name: terraform-aws-cloudwatch
+license: APACHE2
+github_repo: devotica-labs/terraform-aws-cloudwatch
+
+badges:
+  - name: CI
+    image: https://github.com/devotica-labs/terraform-aws-cloudwatch/actions/workflows/ci.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-cloudwatch/actions/workflows/ci.yml
+  - name: Release
+    image: https://github.com/devotica-labs/terraform-aws-cloudwatch/actions/workflows/release.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-cloudwatch/actions/workflows/release.yml
+  - name: License
+    image: https://img.shields.io/badge/License-Apache_2.0-blue.svg
+    url: LICENSE
+
+related:
+  - name: terraform-aws-kms
+    description: Supplies the CMK ARN passed to kms_key_arn to encrypt log data at rest.
+    url: https://github.com/devotica-labs/terraform-aws-kms
+  - name: terraform-aws-lambda
+    description: Compute whose logs and metrics feed the log groups and alarms created here.
+    url: https://github.com/devotica-labs/terraform-aws-lambda
+
+description: |-
+  Terraform module for the AWS **CloudWatch** monitoring baseline — encrypted,
+  retained log groups, metric alarms wired to alarm actions (e.g. an SNS topic),
+  and an optional dashboard. Fintech defaults: KMS encryption when a key ARN is
+  supplied and a 90-day retention floor.
+
+introduction: |-
+  This module creates the [Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
+  observability baseline for a workload: one or more log groups (KMS-encrypted
+  when kms_key_arn is set, retained for default_retention_days unless a group
+  overrides it), a set of metric alarms notifying their alarm_actions on breach
+  and recovery, and an optional dashboard rendered from a JSON body. Resource
+  names compose the native label id with each map key.
+
+usage: |-
+  See [`examples/complete`](examples/complete) for the full surface (multiple log
+  groups, several alarms, a dashboard) and [`examples/basic`](examples/basic) for
+  a single log group plus a CPU alarm notifying an SNS topic.
+
+contributors: []
